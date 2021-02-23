@@ -71,7 +71,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="27" selection-start-column="27" selection-end-column="27" />
-<<<<<<< Updated upstream
             </state>
           </provider>
         </entry>
@@ -99,8 +98,8 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
               <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-=======
->>>>>>> Stashed changes
+              =======
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes
             </state>
           </provider>
         </entry>
@@ -477,21 +476,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="3443000" />
-=======
-    <option name="totallyTimeSpent" value="2693000" />
->>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-<<<<<<< Updated upstream
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
-=======
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
->>>>>>> Stashed changes
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -647,24 +638,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calculator/src/main/java/com/calculator/calculator/rabbitConfiguration/RabbitConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/rest/src/main/resources/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
+    <provider selected="true" editor-type-id="text-editor">
+      <state relative-caret-position="143">
+        <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+        <folding>
+          <element signature="imports" expanded="true" />
+        </folding>
+      </state>
+    </provider>
+    <provider selected="true" editor-type-id="text-editor">
+      <state relative-caret-position="129">
+        <caret line="19" selection-start-line="19" selection-end-line="19" />
+      </state>
+    </provider>
     <entry file="file://$PROJECT_DIR$/rest/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -672,14 +658,10 @@
         </state>
       </provider>
     </entry>
-=======
-    <entry file="file://$PROJECT_DIR$/rest/src/main/resources/templates/index.html" />
->>>>>>> Stashed changes
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/rest-api_17.http">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="27" selection-start-column="27" selection-end-column="27" />
-<<<<<<< Updated upstream
         </state>
       </provider>
     </entry>
@@ -687,8 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-=======
->>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
