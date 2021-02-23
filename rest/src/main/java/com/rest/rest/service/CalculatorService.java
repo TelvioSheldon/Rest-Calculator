@@ -47,7 +47,6 @@ public class CalculatorService {
         }
 
         rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, new Operation(operationType,firstValue,secondValue));
-        log.info("Operation sent");
         response.setHeader("Identificador unico", new UUID(System.currentTimeMillis(), System.currentTimeMillis()).toString());
         return result;
 
