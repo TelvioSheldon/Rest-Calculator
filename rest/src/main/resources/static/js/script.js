@@ -7,7 +7,6 @@ function calculate(){
     b = document.getElementById("v2").value;
     result = document.getElementById("result");
     url = "http://localhost:9080/"+operationType+"?a="+a+"&b="+b;
-console.log(operationType);
     fetch(url)
         .then(function (response) {
             return response.json();
