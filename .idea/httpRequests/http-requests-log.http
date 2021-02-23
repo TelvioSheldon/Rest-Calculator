@@ -1,3 +1,27 @@
+GET http://localhost:9080/div?a=1&b=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2021-02-23T013336.200.json
+
+###
+
+GET http://localhost:9080/sudivm?a=1&b=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2021-02-23T013321.200.json
+
+###
+
+GET http://localhost:9080/sum?a=1&b=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2021-02-23T013309.200.json
+
+###
+
 GET http://localhost:9080/sum?a=1&b=3
 Accept: */*
 Cache-Control: no-cache
