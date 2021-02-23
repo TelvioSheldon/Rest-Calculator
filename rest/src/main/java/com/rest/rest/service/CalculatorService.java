@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
+import java.math.BigDecimal;
 import java.util.UUID;
 
 
@@ -21,7 +22,7 @@ public class CalculatorService {
 
     private final RabbitTemplate rabbitTemplate;
 
-    private static final Logger log = LoggerFactory.getLogger(Operation.class);
+    private static final Logger log = LoggerFactory.getLogger(CalculatorService.class);
 
 
     @Autowired
@@ -37,6 +38,9 @@ public class CalculatorService {
 
         if( operationType.equalsIgnoreCase("div") && secondValue==0){
             result =  new UnexpectedResult("Nao e' possivel efectuar uma divisao por zero(0) em R");
+
+            //rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, new Response(response.getStatus(), identifier.toString(), new BigDecimal("3")).customReponse());
+
         }
 
 
@@ -46,8 +50,10 @@ public class CalculatorService {
             result = new ExpectedResult(operation.getResult());
         }
 
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, new Operation(operationType,firstValue,secondValue));
-        response.setHeader("Identificador unico", new UUID(System.currentTimeMillis(), System.currentTimeMillis()).toString());
+        
+        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, new Operation("sum", 3, 3));
+        //log.info(new Response(response.getStatus(),  identifier.toString(), new BigDecimal("3")).customReponse());
+
         return result;
 
 
