@@ -42,11 +42,12 @@ public class CalculatorService {
 
         else{
             Operation operation = new Operation(operationType, firstValue, secondValue);
-            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, new Operation(operationType,firstValue,secondValue));
-            log.info("Practical Tip sent");
+
             result = new ExpectedResult(operation.getResult());
         }
 
+        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, new Operation(operationType,firstValue,secondValue));
+        log.info("Operation sent");
         response.setHeader("Identificador unico", new UUID(System.currentTimeMillis(), System.currentTimeMillis()).toString());
         return result;
 
