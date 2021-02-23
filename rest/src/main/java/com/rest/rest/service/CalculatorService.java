@@ -1,0 +1,57 @@
+package com.rest.rest.service;
+
+
+import com.consumer.consumer.model.ExpectedResult;
+import com.consumer.consumer.model.Operation;
+import com.consumer.consumer.model.Result;
+import com.consumer.consumer.model.UnexpectedResult;
+import com.producer.producer.api.ResultProducer;
+import com.producer.producer.rabbitConfiguration.RabbitConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpServletResponse;
+import java.util.UUID;
+
+
+@Service
+public class CalculatorService {
+
+    private final RabbitTemplate rabbitTemplate;
+
+    private static final Logger log = LoggerFactory.getLogger(Operation.class);
+
+
+    @Autowired
+    public CalculatorService(final RabbitTemplate rabbitTemplate){
+        this.rabbitTemplate = rabbitTemplate;
+    }
+
+
+
+    public Result calculate(HttpServletResponse response, String operationType, float firstValue, float secondValue){
+
+        Result result;
+
+        if( operationType.equalsIgnoreCase("div") && secondValue==0){
+            result =  new UnexpectedResult ("Nao e' possivel efectuar uma divisao por zero(0) em R");
+        }
+
+
+        else{
+            Operation operation = new Operation(operationType, firstValue, secondValue);
+            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, new Operation(operationType,firstValue,secondValue));
+            log.info("Practical Tip sent");
+            result = new ExpectedResult(operation.getResult());
+        }
+
+        response.setHeader("Identificador unico", new UUID(System.currentTimeMillis(), System.currentTimeMillis()).toString());
+        return result;
+
+
+    }
+
+}

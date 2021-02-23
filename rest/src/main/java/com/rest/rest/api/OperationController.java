@@ -1,8 +1,7 @@
 package com.rest.rest.api;
 
 
-import com.consumer.consumer.model.Result;
-import com.producer.producer.service.CalculatorService;
+import com.rest.rest.service.CalculatorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -13,14 +12,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
-@Controller
 @RequestMapping("/")
-public class Controller {
+public class OperationController {
 
 
     private CalculatorService calculatorService;
 
-    public ResultProducer(CalculatorService calculatorService) {
+    public OperationController(CalculatorService calculatorService) {
         this.calculatorService=calculatorService;
 
     }
