@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfig {
 
-    public static final String EXCHANGE_NAME = "operator";
+    public static final String EXCHANGE_NAME = "calculator";
     public static final String DEFAULT_PARSING_QUEUE = "operation";
     public static final String ROUTING_KEY = "wit";
 

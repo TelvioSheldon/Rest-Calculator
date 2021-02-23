@@ -1,3 +1,11 @@
+GET http://localhost:9080/sum?a=1&b=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2021-02-23T011818.200.json
+
+###
+
 GET http://localhost:9080/div?a=9&b=0
 Accept: */*
 Cache-Control: no-cache
