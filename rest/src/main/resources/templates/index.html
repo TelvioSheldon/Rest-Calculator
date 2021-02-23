@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rest Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+<div>
+    <h1>Java challenge - Rest Calculator</h1>
+
+    <form action="#" id="calc" onsubmit="calculate()">
+        <section>
+            <label for="v1">Valor 1:</label>
+            <input type="number" id="v1" step="any" required>
+        </section>
+
+        <section>
+            <label for="v2">valor 2:</label>
+            <input type="number" id="v2" step="any" required>
+        </section>
+
+        <section>
+            <label for="op">Operation</label>
+            <select id="op">
+                <option value="sum">Soma</option>
+                <option value="sub">Subtracao</option>
+                <option value="pro">Produto</option>
+                <option value="div">Divisao</option>
+            </select>
+
+            <input type="submit" value="Calcular" ><br><br>
+        </section>
+
+
+        <div>
+            <label for="result">Result:</label>
+            <input type="text" id="result">
+
+        </div>
+
+
+
+    </form>
+</div>
+
+</body>
+</html>
