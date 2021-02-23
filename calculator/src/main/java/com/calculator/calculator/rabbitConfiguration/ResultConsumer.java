@@ -1,6 +1,5 @@
 package com.calculator.calculator.rabbitConfiguration;
 
-import com.calculator.calculator.model.Operation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
