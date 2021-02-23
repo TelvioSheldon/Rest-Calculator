@@ -1,6 +1,7 @@
 package com.rest.rest.api;
 
 
+import com.calculator.calculator.model.Result;
 import com.rest.rest.service.CalculatorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
