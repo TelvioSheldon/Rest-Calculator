@@ -35,6 +35,8 @@ public class CalculatorService {
     public Result calculate(HttpServletResponse response, String operationType, float firstValue, float secondValue){
 
         Result result;
+        UUID identifier=new UUID(System.currentTimeMillis(), System.currentTimeMillis());
+
 
         if( operationType.equalsIgnoreCase("div") && secondValue==0){
             result =  new UnexpectedResult("Nao e' possivel efectuar uma divisao por zero(0) em R");
@@ -50,8 +52,9 @@ public class CalculatorService {
             result = new ExpectedResult(operation.getResult());
         }
 
-        
+
         rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, new Operation("sum", 3, 3));
+        response.setHeader("Identificador", identifier.toString());
         //log.info(new Response(response.getStatus(),  identifier.toString(), new BigDecimal("3")).customReponse());
 
         return result;

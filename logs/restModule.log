@@ -21,3 +21,21 @@
 2021-02-23 21:19:54.790  INFO 80061 --- [http-nio-9080-exec-3] com.rest.rest.service.CalculatorService  : Request received
 2021-02-23 21:19:54.793  INFO 80061 --- [http-nio-9080-exec-3] com.rest.rest.api.logging.LoggingFilter  : Request ended => GET /div?a=1&b=3, client=127.0.0.1, headers=[accept:"*/*", cache-control:"no-cache", host:"localhost:9080", connection:"Keep-Alive", user-agent:"Apache-HttpClient/4.5.6 (Java/1.8.0_152-release)", accept-encoding:"gzip,deflate"]]null
 2021-02-23 21:20:22.061  INFO 80061 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-23 21:21:52.268  INFO 80642 --- [main] com.rest.rest.RestApplication            : Starting RestApplication using Java 15.0.1 on Inercios-MacBook-Pro.local with PID 80642 (/Users/inerciobelton/IdeaProjects/Rest Calculator/rest/out/production/classes started by inerciobelton in /Users/inerciobelton/IdeaProjects/Rest Calculator)
+2021-02-23 21:21:52.283  INFO 80642 --- [main] com.rest.rest.RestApplication            : No active profile set, falling back to default profiles: default
+2021-02-23 21:21:54.739  INFO 80642 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9080 (http)
+2021-02-23 21:21:54.753  INFO 80642 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-23 21:21:54.753  INFO 80642 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-02-23 21:21:54.855  INFO 80642 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-23 21:21:54.856  INFO 80642 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2365 ms
+2021-02-23 21:21:55.731  INFO 80642 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-23 21:21:55.842  INFO 80642 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-02-23 21:21:56.248  INFO 80642 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9080 (http) with context path ''
+2021-02-23 21:21:56.272  INFO 80642 --- [main] com.rest.rest.RestApplication            : Started RestApplication in 5.279 seconds (JVM running for 7.368)
+2021-02-23 21:22:10.539  INFO 80642 --- [http-nio-9080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-23 21:22:10.539  INFO 80642 --- [http-nio-9080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-23 21:22:10.541  INFO 80642 --- [http-nio-9080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-02-23 21:22:10.552  INFO 80642 --- [http-nio-9080-exec-1] com.rest.rest.api.logging.LoggingFilter  : Request started => GET /div?a=1&b=3, client=127.0.0.1, headers=[accept:"*/*", cache-control:"no-cache", host:"localhost:9080", connection:"Keep-Alive", user-agent:"Apache-HttpClient/4.5.6 (Java/1.8.0_152-release)", accept-encoding:"gzip,deflate"]]null
+2021-02-23 21:22:10.623  INFO 80642 --- [http-nio-9080-exec-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2021-02-23 21:22:10.657  INFO 80642 --- [http-nio-9080-exec-1] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7b6860f9:0/SimpleConnection@62670ef9 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 54035]
+2021-02-23 21:22:10.715  INFO 80642 --- [http-nio-9080-exec-1] com.rest.rest.api.logging.LoggingFilter  : Request ended => GET /div?a=1&b=3, client=127.0.0.1, headers=[accept:"*/*", cache-control:"no-cache", host:"localhost:9080", connection:"Keep-Alive", user-agent:"Apache-HttpClient/4.5.6 (Java/1.8.0_152-release)", accept-encoding:"gzip,deflate"]]null
