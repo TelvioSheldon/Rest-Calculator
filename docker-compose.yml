@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  rabbitmq-demo:
+    image: rabbitmq:3-management
+    #    volumes:
+    #      - rabbitmq:/var/lib/rabbitmq
+    environment:
+      - TCP_PORTS=15672, 5672
+    #      - RABBITMQ_CONFIG_FILE=/etc/rabbitmq/rabbitmq-test
+    ports:
+      - 15672:15672
+      - 5672:5672
