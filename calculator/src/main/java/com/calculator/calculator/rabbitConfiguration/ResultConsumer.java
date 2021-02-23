@@ -1,6 +1,6 @@
 package com.calculator.calculator.rabbitConfiguration;
 
-import com.consumer.consumer.model.Operation;
+import com.calculator.calculator.model.Operation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -13,6 +13,6 @@ public class ResultConsumer {
 
     @RabbitListener(queues = RabbitConfig.DEFAULT_PARSING_QUEUE)
     public void consumeDefaultMessage(final Operation operation) {
-        log.info("Received message, tip is: {}", operation.toString());
+        log.info("Received operation is: {}", operation.toString());
     }
 }

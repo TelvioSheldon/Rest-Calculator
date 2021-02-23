@@ -1,0 +1,24 @@
+GET http://localhost:9080/div?a=9&b=0
+Accept: */*
+Cache-Control: no-cache
+
+<> 2021-02-23T011120.200.json
+
+###
+
+GET http://localhost:9080/div?a=9&b=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2021-02-23T011115.200.json
+
+###
+
+GET http://localhost:9080/div?a=3&b=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2021-02-23T011105.200.json
+
+###
+

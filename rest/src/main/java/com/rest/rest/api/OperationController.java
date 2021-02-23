@@ -3,13 +3,7 @@ package com.rest.rest.api;
 
 import com.calculator.calculator.model.Result;
 import com.rest.rest.service.CalculatorService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
