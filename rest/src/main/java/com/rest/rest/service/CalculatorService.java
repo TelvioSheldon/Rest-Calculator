@@ -1,13 +1,11 @@
 package com.rest.rest.service;
 
 
-import com.calculator.calculator.model.ExpectedResult;
-import com.calculator.calculator.model.Operation;
-import com.calculator.calculator.model.Result;
-import com.calculator.calculator.model.UnexpectedResult;
+import com.calculator.calculator.model.*;
 import com.rest.rest.rabbitConfiguration.RabbitConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,27 +34,25 @@ public class CalculatorService {
 
         Result result;
         UUID identifier=new UUID(System.currentTimeMillis(), System.currentTimeMillis());
+        response.setHeader("Identificador", identifier.toString());
 
 
         if( operationType.equalsIgnoreCase("div") && secondValue==0){
             result =  new UnexpectedResult("Nao e' possivel efectuar uma divisao por zero(0) em R");
-
-            //rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, new Response(response.getStatus(), identifier.toString(), new BigDecimal("3")).customReponse());
-
+            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, new Response(response.getStatus(), identifier.toString(), "Nao e' possivel efectuar uma divisao por zero(0) em R").customReponse() );
+            log.info(new Response(response.getStatus(),  identifier.toString(), "Nao e' possivel efectuar uma divisao por zero(0) em R").customReponse());
         }
 
 
         else{
             Operation operation = new Operation(operationType, firstValue, secondValue);
-
+            rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, new Response(response.getStatus(), identifier.toString(), operation.getResult().toString()).customReponse() );
             result = new ExpectedResult(operation.getResult());
+            log.info(new Response(response.getStatus(),  identifier.toString(), "Nao e' possivel efectuar uma divisao por zero(0) em R").customReponse());
         }
 
 
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, new Operation("sum", 3, 3));
-        response.setHeader("Identificador", identifier.toString());
-        //log.info(new Response(response.getStatus(),  identifier.toString(), new BigDecimal("3")).customReponse());
-
+        MDC.put("Identificador", identifier.toString());
         return result;
 
 
