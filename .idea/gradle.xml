@@ -12,6 +12,27 @@
         </option>
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/calculator" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/calculator" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="disableWrapperSourceDistributionNotification" value="true" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/rest" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/rest" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
